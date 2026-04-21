@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/products")
 public class ProductController {
 
     @Autowired
@@ -26,6 +27,11 @@ public class ProductController {
     @PutMapping("/updateProduct/{id}")
     public void updateProduct(@PathVariable Long id,@RequestBody Product product){
         productService.updateById(id,product);
+    }
+
+    @GetMapping("/{id}")
+    public Product getProductById(@PathVariable Long id) {
+        return productService.getProductById(id);
     }
 
     //delete is for delete product
