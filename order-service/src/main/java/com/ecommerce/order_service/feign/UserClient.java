@@ -1,5 +1,6 @@
 package com.ecommerce.order_service.feign;
 
+import com.ecommerce.order_service.dto.UserDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -8,5 +9,5 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface UserClient {
 
     @GetMapping("/users/{id}")
-    Object getUser(@PathVariable("id") Long id);
+    UserDTO getUser(@PathVariable("id") Long id);
 }
