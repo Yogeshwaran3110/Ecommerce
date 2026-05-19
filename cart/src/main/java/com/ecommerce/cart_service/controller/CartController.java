@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("/cart")
 public class CartController {
     @Autowired
@@ -23,7 +23,10 @@ public class CartController {
     public List<Cart> getCart(@PathVariable Long userId){
         return cartService.getUserCart(userId);
     }
-
+    @GetMapping
+    public List<Cart> getAllCarts(){
+        return cartService.getAllUserCart();
+    }
     @DeleteMapping("/{id}")
     public void remove(@PathVariable Long id){
         cartService.remove(id);

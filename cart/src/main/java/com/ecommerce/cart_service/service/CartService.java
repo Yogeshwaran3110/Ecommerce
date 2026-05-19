@@ -26,6 +26,11 @@ public class CartService {
         return repository.findByUserId(userId);
     }
 
+    public List<Cart> getAllUserCart(){
+        return repository.findAll();
+    }
+
+
     public void remove(Long id){
         repository.deleteById(id);
     }

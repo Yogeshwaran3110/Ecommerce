@@ -13,6 +13,6 @@ public interface ProductClient {
     @GetMapping("/products/{id}")
     ProductDTO getProduct(@PathVariable("id") Long id);
 
-    @PutMapping("/products/{id}")
+    @PutMapping("/products/updateProduct/{id}")
     ProductDTO updateProduct(@PathVariable("id") Long id, @RequestBody ProductDTO product);
 }
